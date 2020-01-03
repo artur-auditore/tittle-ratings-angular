@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { StarringDetailComponent } from './starring-detail/starring-detail.component'
 import { FormsModule }   from '@angular/forms';
 import { StarringsDashboardComponent } from './starrings-dashboard/starrings-dashboard.component';
+import { TitlesComponent } from './titles/titles.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { StarringsDashboardComponent } from './starrings-dashboard/starrings-das
     StarringListComponent,
     LoginComponent,
     StarringDetailComponent,
-    StarringsDashboardComponent
+    StarringsDashboardComponent,
+    TitlesComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule, FormsModule
