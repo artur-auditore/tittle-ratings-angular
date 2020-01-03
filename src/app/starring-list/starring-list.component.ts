@@ -1,5 +1,6 @@
 import { StarringService } from './starring.service'
 import { Component, OnInit } from '@angular/core';
+import { Starring } from './starring';
 
 @Component({
   selector: 'app-starring-list',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StarringListComponent implements OnInit {
 
+  selectedStarring: Starring;
   starrings: Array<any>;
 
   constructor(private starringService: StarringService) { this.starrings }
@@ -18,6 +20,10 @@ export class StarringListComponent implements OnInit {
 
   listar(){
     this.starringService.listar().subscribe(dados => this.starrings = dados);
+  }
+
+  onSelect(starring: Starring){
+    this.selectedStarring = starring;
   }
 
 }

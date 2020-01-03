@@ -1,7 +1,11 @@
-<h2>Listagem</h2>
+<h2>Starrings</h2>
 
-<ul>
-    <li *ngFor="let starring of starrings">
-        {{starring.id}} - {{starring.name}}
+<ul class="starrings">
+    <li *ngFor="let starring of starrings"
+        [class.selected]="starring === selectedStarring"
+        (click)="onSelect(starring)">
+        <span class="badge">{{starring.id}}</span> {{starring.name}}
     </li>
 </ul>
+
+<app-starring-detail [starring]="selectedStarring"></app-starring-detail>
