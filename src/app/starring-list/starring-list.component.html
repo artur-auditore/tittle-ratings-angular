@@ -1,11 +1,9 @@
 <h2>Starrings</h2>
 
 <ul class="starrings">
-    <li *ngFor="let starring of starrings"
-        [class.selected]="starring === selectedStarring"
-        (click)="onSelect(starring)">
-        <span class="badge">{{starring.id}}</span> {{starring.name}}
+    <li *ngFor="let starring of starrings">
+        <a routerLink="/starrings/{{starring.pk}}">
+            <span class="badge">{{starring.pk}}</span> {{starring.name}}
+        </a>
     </li>
 </ul>
-
-<app-starring-detail [starring]="selectedStarring"></app-starring-detail>

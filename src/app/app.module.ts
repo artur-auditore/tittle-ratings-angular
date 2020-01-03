@@ -9,13 +9,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { StarringDetailComponent } from './starring-detail/starring-detail.component'
 import { FormsModule }   from '@angular/forms';
+import { StarringsDashboardComponent } from './starrings-dashboard/starrings-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StarringListComponent,
     LoginComponent,
-    StarringDetailComponent
+    StarringDetailComponent,
+    StarringsDashboardComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule, FormsModule

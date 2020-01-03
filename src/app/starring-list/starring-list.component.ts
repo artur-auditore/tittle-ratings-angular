@@ -1,6 +1,6 @@
 import { StarringService } from './starring.service'
 import { Component, OnInit } from '@angular/core';
-import { Starring } from './starring';
+import { Starring } from '../model/Starring';
 
 @Component({
   selector: 'app-starring-list',
@@ -15,11 +15,11 @@ export class StarringListComponent implements OnInit {
   constructor(private starringService: StarringService) { this.starrings }
 
   ngOnInit() {
-    this.listar();
+    this.getStarrings();
   }
 
-  listar(){
-    this.starringService.listar().subscribe(dados => this.starrings = dados);
+  getStarrings(){
+    this.starringService.listar().subscribe(starrings => this.starrings = starrings);
   }
 
   onSelect(starring: Starring){
