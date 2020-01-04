@@ -20,7 +20,7 @@ export class ProfilesService {
     )
   }
 
-  getProfiles(pk: number){
+  getProfile(pk: number){
     const url = `${this.profilesUrl}/${pk}`;
     return this.http.get<Profile>(url).pipe(
       catchError(this.handleError<Profile>(`getProfile id=${pk}`))

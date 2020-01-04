@@ -9,6 +9,7 @@ import { StarringDetailComponent } from './starring-detail/starring-detail.compo
 import { TitleDetailComponent } from './title-detail/title-detail.component';
 import { TitlesComponent } from './titles/titles.component';
 import { GendersComponent } from './genders/genders.component';
+import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/starrings-dashboard', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'titles', component: TitlesComponent},
   {path: 'titles/:pk', component: TitleDetailComponent},
   {path: 'genders', component: GendersComponent},
-  {path: 'profiles', component: ProfilesComponent}
+  {path: 'profiles', component: ProfilesComponent},
+  {path: 'profiles/:pk', component: ProfileDetailComponent}
 ]
 
 @NgModule({

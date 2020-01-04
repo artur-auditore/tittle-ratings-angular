@@ -1,0 +1,12 @@
+<div *ngIf="profile">
+    <h2>{{profile.name | uppercase}} Details</h2>
+    <div><span>ID: </span>{{profile.pk}}</div>
+    <div><span>Email: </span>{{profile.email}}</div>
+    <div>
+        <label>name:
+      <input [(ngModel)]="profile.name" placeholder="name"/>
+    </label>
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
+</div>

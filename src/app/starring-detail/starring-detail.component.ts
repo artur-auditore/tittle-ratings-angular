@@ -1,6 +1,6 @@
 import { StarringService } from '../service/starring.service';
 import { Component, OnInit, Input } from '@angular/core';
-import {Starring} from '../model/Starring'
+import { Starring } from '../model/Starring'
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common'
 
