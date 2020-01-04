@@ -15,6 +15,7 @@ import { TitleDetailComponent } from './title-detail/title-detail.component';
 import { GendersComponent } from './genders/genders.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
+import { RatingsComponent } from './ratings/ratings.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
     TitleDetailComponent,
     GendersComponent,
     ProfilesComponent,
-    ProfileDetailComponent
+    ProfileDetailComponent,
+    RatingsComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule, FormsModule

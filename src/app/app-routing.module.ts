@@ -1,3 +1,4 @@
+import { RatingsComponent } from './ratings/ratings.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'titles/:pk', component: TitleDetailComponent},
   {path: 'genders', component: GendersComponent},
   {path: 'profiles', component: ProfilesComponent},
-  {path: 'profiles/:pk', component: ProfileDetailComponent}
+  {path: 'profiles/:pk', component: ProfileDetailComponent},
+  {path: 'ratings', component: RatingsComponent}
 ]
 
 @NgModule({
