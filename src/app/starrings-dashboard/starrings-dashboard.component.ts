@@ -18,7 +18,7 @@ export class StarringsDashboardComponent implements OnInit {
   }
 
   getStarrings(){
-    this.starringService.listar().subscribe(starrings => this.starrings = starrings.slice(1,5));
+    this.starringService.listar().subscribe(starrings => this.starrings = starrings);
   }
 
 }
