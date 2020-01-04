@@ -11,6 +11,7 @@ import { StarringDetailComponent } from './starring-detail/starring-detail.compo
 import { FormsModule }   from '@angular/forms';
 import { StarringsDashboardComponent } from './starrings-dashboard/starrings-dashboard.component';
 import { TitlesComponent } from './titles/titles.component';
+import { TitleDetailComponent } from './title-detail/title-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TitlesComponent } from './titles/titles.component';
     LoginComponent,
     StarringDetailComponent,
     StarringsDashboardComponent,
-    TitlesComponent
+    TitlesComponent,
+    TitleDetailComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule, FormsModule

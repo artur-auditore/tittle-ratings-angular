@@ -40,12 +40,13 @@ h4 {
 }
 
 .module {
+    font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
     text-align: center;
     color: #eee;
     max-height: 120px;
     min-width: 120px;
-    background-color: #3f525c;
+    background-color: #d4d000;
     border-radius: 2px;
 }
 
