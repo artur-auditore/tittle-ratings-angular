@@ -13,6 +13,7 @@ import { StarringsDashboardComponent } from './starrings-dashboard/starrings-das
 import { TitlesComponent } from './titles/titles.component';
 import { TitleDetailComponent } from './title-detail/title-detail.component';
 import { GendersComponent } from './genders/genders.component';
+import { ProfilesComponent } from './profiles/profiles.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { GendersComponent } from './genders/genders.component';
     StarringsDashboardComponent,
     TitlesComponent,
     TitleDetailComponent,
-    GendersComponent
+    GendersComponent,
+    ProfilesComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule, FormsModule
