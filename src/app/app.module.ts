@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { StarringService } from './starring-list/starring.service'
+import { StarringService } from './service/starring.service'
 import { HttpClientModule } from '@angular/common/http';
 import { StarringListComponent } from './starring-list/starring-list.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,7 @@ import { FormsModule }   from '@angular/forms';
 import { StarringsDashboardComponent } from './starrings-dashboard/starrings-dashboard.component';
 import { TitlesComponent } from './titles/titles.component';
 import { TitleDetailComponent } from './title-detail/title-detail.component';
+import { GendersComponent } from './genders/genders.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TitleDetailComponent } from './title-detail/title-detail.component';
     StarringDetailComponent,
     StarringsDashboardComponent,
     TitlesComponent,
-    TitleDetailComponent
+    TitleDetailComponent,
+    GendersComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule, FormsModule

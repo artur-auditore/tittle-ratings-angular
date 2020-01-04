@@ -1,4 +1,4 @@
-import { StarringService } from './starring.service'
+import { StarringService } from '../service/starring.service'
 import { Component, OnInit } from '@angular/core';
 import { Starring } from '../model/Starring';
 

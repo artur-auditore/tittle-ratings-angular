@@ -1,4 +1,4 @@
-import { TitlesServiceService } from './../titles-service.service';
+import { TitlesServiceService } from '../service/titles-service.service';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '../model/Title';
 

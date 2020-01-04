@@ -1,4 +1,4 @@
-import { TitlesServiceService } from './../titles-service.service';
+import { TitlesServiceService } from '../service/titles-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common'
