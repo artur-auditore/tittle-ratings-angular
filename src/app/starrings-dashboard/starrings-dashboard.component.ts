@@ -21,4 +21,15 @@ export class StarringsDashboardComponent implements OnInit {
     this.starringService.listar().subscribe(starrings => this.starrings = starrings);
   }
 
+  add(name: String, age: number, nationality: String){
+    let starring = new Starring()
+    starring.name = name;
+    starring.age = age;
+    starring.nationality = nationality;
+    this.starringService.newStarring(starring)
+    .subscribe(starring =>
+      this.starrings.push(starring)
+    );
+  }
+
 }

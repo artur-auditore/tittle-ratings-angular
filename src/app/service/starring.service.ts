@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Starring } from '../model/Starring';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -10,6 +10,10 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class StarringService {
 
   starringsUrl = "http://localhost:8000/starrings";
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   constructor(private http: HttpClient) { }
 
@@ -24,6 +28,12 @@ export class StarringService {
     const url = `${this.starringsUrl}/${pk}`;
     return this.http.get<Starring>(url).pipe(
       catchError(this.handleError<Starring>(`getStarring id=${pk}`))
+    );
+  }
+
+  newStarring(starring: Starring){
+    return this.http.post<Starring>(this.starringsUrl, starring, this.httpOptions).pipe(
+      catchError(this.handleError<Starring>(`newStarring`))
     );
   }
 

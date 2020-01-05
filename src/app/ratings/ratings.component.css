@@ -41,12 +41,12 @@ h4 {
 }
 
 .module {
-    padding: 20px;
+    padding: 1px;
     text-align: center;
-    color: #eee;
+    color: rgb(0, 0, 0);
     max-height: 120px;
     min-width: 120px;
-    background-color: #eeff00;
+    background-color: #00e1ff;
     border-radius: 2px;
 }
 

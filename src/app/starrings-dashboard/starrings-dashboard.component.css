@@ -78,3 +78,8 @@ h4 {
         min-width: 60px;
     }
 }
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 0.5em;
+}

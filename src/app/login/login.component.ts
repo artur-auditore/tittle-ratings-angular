@@ -1,4 +1,8 @@
+import { Router } from '@angular/router';
+import { User } from './../model/User';
+import { AuthService } from './auth.service';
 import { Component, OnInit } from '@angular/core';
+import { error } from 'protractor'
 
 @Component({
   selector: 'app-login',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  private user: User = new User()
+  public userdata: any
+  usuarioAuthenticated: any
+  error: any;
+
+  constructor(private authservice: AuthService, private router: Router) { }
 
   ngOnInit() {
+    
   }
 
+  fazerLogin(){
+    this.authservice.fazerLogin(this.user).subscribe(
+      ok =>{
+        localStorage.setItem('currentUserName', ok['name']);
+        localStorage.setItem('currentUserToken', ok['token']);
+        this.router.navigate(['/starrings-dashboard'])
+      },
+      error =>{
+        document.getElementById('mensagem').innerHTML = "Usuario não encontrado";
+      }
+    )
+  }
 }

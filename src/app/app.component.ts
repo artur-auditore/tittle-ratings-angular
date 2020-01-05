@@ -1,3 +1,4 @@
+import { AuthService } from './login/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Title Ratings';
+
+  showMenu = false;
+
+  constructor(private authService: AuthService){}
+
+  ngOnInit(){
+    this.authService.showMenu.subscribe(
+      show => this.showMenu = show
+    );
+  }
 }

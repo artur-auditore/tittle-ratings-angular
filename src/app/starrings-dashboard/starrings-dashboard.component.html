@@ -1,3 +1,20 @@
+<h4>New Starring</h4>
+
+<div>
+    <label>Name:
+      <input #starringName />
+    </label>
+    <label>Age:
+        <input #starringAge />
+      </label>
+    <label>Nationality:
+        <input #starringNationality />
+      </label>
+    <button (click)="add(starringName.value, starringAge.value, starringNationality.value)">
+      add
+    </button>
+</div>
+
 <h3>Starrings</h3>
 <div class="grid grid-pad">
     <a *ngFor="let starring of starrings" class="col-1-4" routerLink="/starrings/{{starring.pk}}">

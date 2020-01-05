@@ -1,3 +1,4 @@
+import { AuthService } from './login/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -30,11 +31,11 @@ import { RatingsComponent } from './ratings/ratings.component';
     ProfilesComponent,
     ProfileDetailComponent,
     RatingsComponent
-  ],
+    ],
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule, FormsModule
   ],
-  providers: [StarringService],
+  providers: [StarringService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

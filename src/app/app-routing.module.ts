@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { RatingsComponent } from './ratings/ratings.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { NgModule, Component } from '@angular/core';
@@ -13,7 +14,7 @@ import { GendersComponent } from './genders/genders.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/starrings-dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: 'starrings', component: StarringListComponent},
   {path: 'starrings-dashboard', component: StarringsDashboardComponent},
   {path: 'starrings/:pk', component: StarringDetailComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'genders', component: GendersComponent},
   {path: 'profiles', component: ProfilesComponent},
   {path: 'profiles/:pk', component: ProfileDetailComponent},
-  {path: 'ratings', component: RatingsComponent}
+  {path: 'ratings', component: RatingsComponent},
+  {path: 'login', component: LoginComponent}
 ]
 
 @NgModule({

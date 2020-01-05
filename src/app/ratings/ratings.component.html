@@ -1,8 +1,10 @@
 <h3>Ratings</h3>
 <div class="grid grid-pad">
-    <a *ngFor="let rating of ratings" class="col-1-4" routerLink="/ratings/{{ratings.pk}}">
+    <a *ngFor="let rating of ratings" class="col-1-4">
         <div class="module rating">
-            <a routerLink="/ratings/{{rating.pk}}">{{rating.title}}</a>
+            <h4>{{rating.profile}}</h4>
+            <h4>{{rating.title}}</h4>
+            <h4>Note: {{rating.note}}</h4>
         </div>
     </a>
 </div>
