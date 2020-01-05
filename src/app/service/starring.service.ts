@@ -37,6 +37,15 @@ export class StarringService {
     );
   }
 
+  delete(starring: Starring| number){
+    const pk = typeof starring === 'number' ? starring : starring.pk;
+    const url = `${this.starringsUrl}/${pk}`;
+
+    return this.http.delete<Starring>(url, this.httpOptions).pipe(
+      catchError(this.handleError<Starring>('deletestarring'))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

@@ -1,5 +1,5 @@
 export class Starring{
-    id: Number;
+    pk: Number;
     name: String;
     age: Number
     nationality: String;
