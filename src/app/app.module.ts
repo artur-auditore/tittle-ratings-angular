@@ -1,3 +1,4 @@
+import { Auth2Service } from './service/auth2.service';
 import { AuthService } from './login/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';

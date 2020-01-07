@@ -1,6 +1,10 @@
+import { User } from './../model/User';
+import { Rating } from './../model/Rating';
+import { ProfilesService } from '../service/profiles.service';
+import { Title } from './../model/Title';
 import { RatingsService } from './../service/ratings.service';
 import { Component, OnInit } from '@angular/core';
-import { Rating } from '../model/Rating';
+import { Profile } from '../model/Profile';
 
 @Component({
   selector: 'app-ratings',
@@ -8,11 +12,12 @@ import { Rating } from '../model/Rating';
   styleUrls: ['./ratings.component.css']
 })
 export class RatingsComponent implements OnInit {
-
+  
+  
   selectedRating: Rating;
   ratings: Array<any>;
 
-  constructor(private ratingService: RatingsService) { }
+  constructor(private ratingService: RatingsService, private profileSee: ProfilesService) { }
 
   ngOnInit() {
     this.getRatings()
@@ -24,6 +29,16 @@ export class RatingsComponent implements OnInit {
 
   onSelect(rating: Rating){
     this.selectedRating = rating;
+  }
+
+  newRating(title: Title, note: number){
+    let rating = new Rating();
+    rating.title = title;
+    rating.note = note;
+
+    this.ratingService.newRating(rating).subscribe(
+      rating => this.ratings.push(rating)
+    );
   }
 
 }

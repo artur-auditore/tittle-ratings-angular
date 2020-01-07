@@ -1,3 +1,4 @@
+import { Auth2Service } from './service/auth2.service';
 import { LoginComponent } from './login/login.component';
 import { RatingsComponent } from './ratings/ratings.component';
 import { ProfilesComponent } from './profiles/profiles.component';
@@ -15,7 +16,7 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  {path: 'starrings', component: StarringListComponent},
+  {path: 'starrings', component: StarringListComponent, canActivate: [Auth2Service]},
   {path: 'starrings-dashboard', component: StarringsDashboardComponent},
   {path: 'starrings/:pk', component: StarringDetailComponent},
   {path: 'titles', component: TitlesComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'profiles', component: ProfilesComponent},
   {path: 'profiles/:pk', component: ProfileDetailComponent},
   {path: 'ratings', component: RatingsComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'logout', component: LoginComponent}
 ]
 
 @NgModule({

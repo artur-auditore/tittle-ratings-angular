@@ -36,6 +36,10 @@ export class StarringDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(){
+    this.starringService.updateStarring(this.starring).subscribe(() => this.goBack())
+  }
+
   delete(starring: Starring){
     this.starrings = this.starrings.filter(s => s!== starring);
     this.starringService.delete(starring).subscribe();

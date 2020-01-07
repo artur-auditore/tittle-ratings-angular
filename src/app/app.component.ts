@@ -14,8 +14,6 @@ export class AppComponent {
   constructor(private authService: AuthService){}
 
   ngOnInit(){
-    this.authService.showMenu.subscribe(
-      show => this.showMenu = show
-    );
+    
   }
 }
