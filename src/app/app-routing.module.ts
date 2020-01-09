@@ -1,4 +1,4 @@
-import { Auth2Service } from './service/auth2.service';
+import { AuthGuardService } from './guard/auth.guard.service';
 import { LoginComponent } from './login/login.component';
 import { RatingsComponent } from './ratings/ratings.component';
 import { ProfilesComponent } from './profiles/profiles.component';
@@ -16,7 +16,7 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  {path: 'starrings', component: StarringListComponent, canActivate: [Auth2Service]},
+  {path: 'starrings', component: StarringListComponent, canActivate: [AuthGuardService]},
   {path: 'starrings-dashboard', component: StarringsDashboardComponent},
   {path: 'starrings/:pk', component: StarringDetailComponent},
   {path: 'titles', component: TitlesComponent},
@@ -31,6 +31,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuardService]
 })
 export class AppRoutingModule { }

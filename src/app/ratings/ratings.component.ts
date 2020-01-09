@@ -13,11 +13,11 @@ import { Profile } from '../model/Profile';
 })
 export class RatingsComponent implements OnInit {
   
-  
+  profile: Profile
   selectedRating: Rating;
   ratings: Array<any>;
 
-  constructor(private ratingService: RatingsService, private profileSee: ProfilesService) { }
+  constructor(private ratingService: RatingsService, private profileService: ProfilesService) { }
 
   ngOnInit() {
     this.getRatings()
@@ -35,7 +35,8 @@ export class RatingsComponent implements OnInit {
     let rating = new Rating();
     rating.title = title;
     rating.note = note;
-
+    this.profile = this.profileService.get(1);
+    rating.profile = this.profile;
     this.ratingService.newRating(rating).subscribe(
       rating => this.ratings.push(rating)
     );

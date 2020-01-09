@@ -6,6 +6,11 @@
     </label>
     <label>Gender:
         <input #titleGender />
+        <ul>
+          <li *ngFor="let gender of genders$ | async">
+            {{gender.name}}
+          </li>
+        </ul>
       </label>
     <label>Year:
         <input #titleYear />

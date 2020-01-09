@@ -1,11 +1,18 @@
 <div *ngIf="starring">
-    <h2>{{starring.name | uppercase}} Details</h2>
-    <div><span>ID: </span>{{starring.pk}}</div>
-    <div><span>Age: </span>{{starring.age}}</div>
-    <div><span>Nationality: </span>{{starring.nationality}}</div>
-    <div>
-        <label>name:
+    <h2>{{starring.name | uppercase}} DETAILS</h2>
+    <div class="n">
+        <label>Name:
       <input [(ngModel)]="starring.name" placeholder="name"/>
+    </label>
+    </div>
+    <div>
+        <label>Age:
+        <input [(ngModel)]="starring.age" placeholder="age">
+      </label>
+    </div>
+    <div>
+        <label>Nationality:
+      <input [(ngModel)]="starring.nationality" placeholder="nationality">
     </label>
     </div>
     <button (click)="goBack()">Go back</button>

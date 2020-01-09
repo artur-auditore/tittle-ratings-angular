@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   private user = new User();
   error: any;
+  data = localStorage
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -23,8 +24,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.user).subscribe(
       ok => {
         console.log(ok),
-        localStorage.setItem('currentUserName', ok['name']);
-        localStorage.setItem('currentUserToken', ok['token']);
+        this.data.setItem('currentUserName', ok['username']);
+        this.data.setItem('currentUserToken', ok['token']);
         this.router.navigate(['/starrings-dashboard'])
       },
       error => {

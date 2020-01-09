@@ -1,13 +1,24 @@
 <div *ngIf="title">
-    <h2>{{title.name | uppercase}} Details</h2>
-    <div><span>ID: </span>{{title.pk}}</div>
-    <div><span>Starring: </span>{{title.starring}}</div>
-    <div><span>Year: </span>{{title.year}}</div>
-    <div><span>Gender: </span>{{title.gender}}</div>
+    <h2>{{title.name | uppercase}} DETAILS</h2>
     <div>
-        <label>name:
+        <label>Name:
       <input [(ngModel)]="title.name" placeholder="name"/>
     </label>
+    </div>
+    <div>
+        <label>Starring:
+        <input [(ngModel)]="title.starring" placeholder="starring"/>
+      </label>
+    </div>
+    <div>
+        <label>Year:
+        <input [(ngModel)]="title.year" placeholder="year"/>
+      </label>
+    </div>
+    <div>
+        <label>Gender:
+        <input [(ngModel)]="title.gender" placeholder="gender"/>
+      </label>
     </div>
     <button (click)="goBack()">go back</button>
     <button (click)="save()">save</button>

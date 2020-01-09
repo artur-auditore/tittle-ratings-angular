@@ -27,6 +27,11 @@ export class ProfilesService {
     );
   }
 
+  get(pk: number): any{
+    const url = `${this.profilesUrl}/${pk}`;
+    return this.http.get<Profile>(url);
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

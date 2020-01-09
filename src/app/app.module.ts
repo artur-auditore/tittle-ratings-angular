@@ -1,4 +1,4 @@
-import { Auth2Service } from './service/auth2.service';
+import { AuthGuardService } from './guard/auth.guard.service';
 import { AuthService } from './login/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -18,6 +18,7 @@ import { GendersComponent } from './genders/genders.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 import { RatingsComponent } from './ratings/ratings.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,9 +35,9 @@ import { RatingsComponent } from './ratings/ratings.component';
     RatingsComponent
     ],
   imports: [
-    BrowserModule, HttpClientModule, AppRoutingModule, FormsModule
+    BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, BrowserAnimationsModule
   ],
-  providers: [StarringService, AuthService],
+  providers: [StarringService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

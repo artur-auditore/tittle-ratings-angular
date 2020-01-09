@@ -2,7 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Starring } from '../model/Starring';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +11,9 @@ export class StarringService {
 
   starringsUrl = "http://localhost:8000/starrings";
 
-  headers = new HttpHeaders()
-   .append('Content-Type' , 'application/json');
-  showMenu = new EventEmitter<boolean>()
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   constructor(private http: HttpClient) { }
 
@@ -32,15 +32,13 @@ export class StarringService {
   }
 
   newStarring(starring: Starring){
-    return this.http.post<Starring>(this.starringsUrl, starring, {headers: this.headers}).pipe(
+    return this.http.post<Starring>(this.starringsUrl, starring, this.httpOptions).pipe(
       catchError(this.handleError<Starring>(`newStarring`))
     );
   }
 
-  updateStarring (starring: Starring): Observable<any> {
-    return this.http.put(this.starringsUrl + `/${starring.pk}`, Starring, {headers: this.headers}).pipe(
-      catchError(this.handleError<any>('updateStarring'))
-    );
+  updateStarring(starring: Starring): Observable<any> {
+    return this.http.put(`${this.starringsUrl}/${starring.pk}`, starring, this.httpOptions)
   }
 
   delete(starring: Starring| number){

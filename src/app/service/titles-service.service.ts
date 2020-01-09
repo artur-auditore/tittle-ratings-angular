@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Title } from '../model/Title'
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -14,6 +14,9 @@ export class TitlesServiceService {
 
   constructor(private http: HttpClient) { }
 
+  headers = new HttpHeaders()
+   .append('Content-Type' , 'application/json');
+
   listar(){
     return this.http.get<any[]>(this.titlesUrl);
   }
@@ -22,6 +25,12 @@ export class TitlesServiceService {
     const url = `${this.titlesUrl}/${pk}`;
     return this.http.get<Title>(url).pipe(
       catchError(this.handleError<Title>(`getTitle id=${pk}`))
+    );
+  }
+
+  newTitle(title: Title){
+    return this.http.post<Title>(this.titlesUrl, title, {headers: this.headers}).pipe(
+      catchError(this.handleError<Title>(`newStarring`))
     );
   }
 
