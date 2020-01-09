@@ -1,9 +1,14 @@
 <h4>New Rating</h4>
 
 <div>
-    <label>Title:
-      <input #ratingTitle />
-    </label>
+    <mat-form-field>
+        <input type="text" placeholder="Title" aria-label="Title" [matAutocomplete]="autoTitle">
+        <mat-autocomplete #autoTitle="matAutocomplete">
+            <mat-option *ngFor="let title of titles" [value]="title.name">
+                {{title.name}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
     <label>Note:
         <input #noteRating />
       </label>

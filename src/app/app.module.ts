@@ -1,8 +1,8 @@
 import { AuthGuardService } from './guard/auth.guard.service';
 import { AuthService } from './login/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { AppComponent } from './app.component';
 import { StarringService } from './service/starring.service'
 import { HttpClientModule } from '@angular/common/http';
@@ -35,9 +35,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RatingsComponent
     ],
   imports: [
-    BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, BrowserAnimationsModule
+    BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, BrowserAnimationsModule,
+    MatAutocompleteModule
   ],
+  exports: [MatAutocompleteModule],
   providers: [StarringService, AuthService, AuthGuardService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

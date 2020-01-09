@@ -1,3 +1,4 @@
+import { TitlesServiceService } from './../service/titles-service.service';
 import { User } from './../model/User';
 import { Rating } from './../model/Rating';
 import { ProfilesService } from '../service/profiles.service';
@@ -12,15 +13,22 @@ import { Profile } from '../model/Profile';
   styleUrls: ['./ratings.component.css']
 })
 export class RatingsComponent implements OnInit {
-  
-  profile: Profile
+  titles: Array<any>;
+  profile: Profile;
   selectedRating: Rating;
   ratings: Array<any>;
 
-  constructor(private ratingService: RatingsService, private profileService: ProfilesService) { }
+  constructor(private ratingService: RatingsService, 
+    private profileService: ProfilesService,
+    private titleService: TitlesServiceService) { }
 
   ngOnInit() {
     this.getRatings()
+    this.getTitles();
+  }
+
+  getTitles(){
+    this.titleService.listar().subscribe(titles => this.titles = titles)
   }
 
   getRatings(){

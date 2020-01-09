@@ -1,27 +1,29 @@
 <h4>New Title</h4>
 
 <div>
-    <label>Name:
-      <input #TitleName />
-    </label>
-    <label>Gender:
-        <input #titleGender />
-        <ul>
-          <li *ngFor="let gender of genders$ | async">
-            {{gender.name}}
-          </li>
-        </ul>
-      </label>
-    <label>Year:
-        <input #titleYear />
-      </label>
-    <label>Starring:
-        <input #titleStarring />
-      </label>
-    <button (click)="newTitle()">
+    <input placeholder="Name" #TitleName/>
+    <mat-form-field>
+        <input type="text" placeholder="Gender" aria-label="Gender" [matAutocomplete]="autoGender">
+        <mat-autocomplete #autoGender="matAutocomplete">
+            <mat-option *ngFor="let gender of genders" [value]="gender.name">
+                {{gender.name}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field>
+        <input type="text" placeholder="Starring" aria-label="Number" [matAutocomplete]="autoStarring">
+        <mat-autocomplete #autoStarring="matAutocomplete">
+            <mat-option *ngFor="let starring of starrings" [value]="starring.name">
+                {{starring.name}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <input placeholder="Year" #titleYear/>
+    <button (click)="newTitle(titleName.value, titleYear.value, autoGender.text, autoStarring.text)">
       add
     </button>
 </div>
+
 
 
 <h3>Titles</h3>
