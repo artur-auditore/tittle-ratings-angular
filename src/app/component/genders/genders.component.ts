@@ -21,4 +21,10 @@ export class GendersComponent implements OnInit {
     this.genderService.listar().subscribe(genders => this.genders = genders);
   }
 
+  newGender(name: String){
+    let gender = new Gender();
+    gender.name = name;
+    this.genderService.newGender(gender).subscribe(gender => this.genders.push(gender))
+  }
+
 }

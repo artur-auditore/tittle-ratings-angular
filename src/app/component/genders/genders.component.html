@@ -1,3 +1,7 @@
+<h4>New Gender</h4>
+<input placeholder="Name" #genderName>
+<button class="btn btn-dark" (click)="newGender(genderName.value)">Add</button>
+
 <h3>Genders</h3>
 <div class="grid grid-pad">
     <a *ngFor="let gender of genders" class="col-1-4">
