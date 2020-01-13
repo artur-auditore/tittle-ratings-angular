@@ -5,18 +5,18 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { AppComponent } from './app.component';
 import { StarringService } from './service/starring.service'
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
-import { StarringListComponent } from './starring-list/starring-list.component';
+import { StarringListComponent } from './component/starring-list/starring-list.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './login/login.component';
-import { StarringDetailComponent } from './starring-detail/starring-detail.component'
+import { LoginComponent } from './component/login/login.component';
+import { StarringDetailComponent } from './component/starring-detail/starring-detail.component'
 import { FormsModule }   from '@angular/forms';
-import { StarringsDashboardComponent } from './starrings-dashboard/starrings-dashboard.component';
-import { TitlesComponent } from './titles/titles.component';
-import { TitleDetailComponent } from './title-detail/title-detail.component';
-import { GendersComponent } from './genders/genders.component';
-import { ProfilesComponent } from './profiles/profiles.component';
-import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
-import { RatingsComponent } from './ratings/ratings.component';
+import { StarringsDashboardComponent } from './component/starrings-dashboard/starrings-dashboard.component';
+import { TitlesComponent } from './component/titles/titles.component';
+import { TitleDetailComponent } from './component/title-detail/title-detail.component';
+import { GendersComponent } from './component/genders/genders.component';
+import { ProfilesComponent } from './component/profiles/profiles.component';
+import { ProfileDetailComponent } from './component/profile-detail/profile-detail.component';
+import { RatingsComponent } from './component/ratings/ratings.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({

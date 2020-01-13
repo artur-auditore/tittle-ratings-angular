@@ -1,18 +1,17 @@
 import { AuthGuard } from './service/auth.service';
-import { LoginComponent } from './login/login.component';
-import { RatingsComponent } from './ratings/ratings.component';
-import { ProfilesComponent } from './profiles/profiles.component';
+import { LoginComponent } from './component/login/login.component';
+import { RatingsComponent } from './component/ratings/ratings.component';
+import { ProfilesComponent } from './component/profiles/profiles.component';
 import { NgModule, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
-import { StarringListComponent } from './starring-list/starring-list.component'
+import { StarringListComponent } from './component/starring-list/starring-list.component'
 import { RouterModule, Routes } from '@angular/router'
-import { StarringsDashboardComponent } from './starrings-dashboard/starrings-dashboard.component'
-import { StarringDetailComponent } from './starring-detail/starring-detail.component'
-import { TitleDetailComponent } from './title-detail/title-detail.component';
-import { TitlesComponent } from './titles/titles.component';
-import { GendersComponent } from './genders/genders.component';
-import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
+import { StarringsDashboardComponent } from './component/starrings-dashboard/starrings-dashboard.component'
+import { StarringDetailComponent } from './component/starring-detail/starring-detail.component'
+import { TitleDetailComponent } from './component/title-detail/title-detail.component';
+import { TitlesComponent } from './component/titles/titles.component';
+import { GendersComponent } from './component/genders/genders.component';
+import { ProfileDetailComponent } from './component/profile-detail/profile-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },

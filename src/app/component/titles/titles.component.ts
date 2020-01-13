@@ -1,10 +1,10 @@
-import { StarringService } from './../service/starring.service';
-import { GendersService } from './../service/genders.service';
-import { Starring } from './../model/Starring';
-import { TitlesServiceService } from '../service/titles-service.service';
+import { StarringService } from '../../service/starring.service';
+import { GendersService } from '../../service/genders.service';
+import { Starring } from '../../model/Starring';
+import { TitlesServiceService } from '../../service/titles-service.service';
 import { Component, OnInit } from '@angular/core';
-import { Title } from '../model/Title';
-import { Gender } from '../model/Gender';
+import { Title } from '../../model/Title';
+import { Gender } from '../../model/Gender';
 
 @Component({
   selector: 'app-titles',

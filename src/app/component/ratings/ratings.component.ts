@@ -1,11 +1,11 @@
-import { TitlesServiceService } from './../service/titles-service.service';
-import { User } from './../model/User';
-import { Rating } from './../model/Rating';
-import { ProfilesService } from '../service/profiles.service';
-import { Title } from './../model/Title';
-import { RatingsService } from './../service/ratings.service';
+import { TitlesServiceService } from '../../service/titles-service.service';
+import { User } from '../../model/User';
+import { Rating } from '../../model/Rating';
+import { ProfilesService } from '../../service/profiles.service';
+import { Title } from '../../model/Title';
+import { RatingsService } from '../../service/ratings.service';
 import { Component, OnInit } from '@angular/core';
-import { Profile } from '../model/Profile';
+import { Profile } from '../../model/Profile';
 
 @Component({
   selector: 'app-ratings',

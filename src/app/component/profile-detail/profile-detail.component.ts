@@ -1,6 +1,6 @@
-import { ProfilesService } from './../service/profiles.service';
+import { ProfilesService } from '../../service/profiles.service';
 import { Component, OnInit } from '@angular/core';
-import { Profile } from '../model/Profile';
+import { Profile } from '../../model/Profile';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common'
 

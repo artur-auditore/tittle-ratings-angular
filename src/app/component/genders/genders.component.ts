@@ -1,6 +1,6 @@
-import { GendersService } from './../service/genders.service';
+import { GendersService } from '../../service/genders.service';
 import { Component, OnInit } from '@angular/core';
-import { Gender } from '../model/Gender';
+import { Gender } from '../../model/Gender';
 
 @Component({
   selector: 'app-genders',
