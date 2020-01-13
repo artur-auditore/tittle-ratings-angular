@@ -1,5 +1,4 @@
 <h4>New Rating</h4>
-
 <div>
     <mat-form-field>
         <input type="text" placeholder="Title" aria-label="Title" [matAutocomplete]="autoTitle">
@@ -12,12 +11,10 @@
     <label>Note:
         <input #noteRating />
       </label>
-    <button (click)="newRating(ratingTitle.value, noteRating.value)">
+    <button (click)="newRating(autoTitle.value, noteRating.value)">
       rate
     </button>
 </div>
-
-
 <h3>Ratings</h3>
 <div class="grid grid-pad">
     <a *ngFor="let rating of ratings" class="col-1-4">

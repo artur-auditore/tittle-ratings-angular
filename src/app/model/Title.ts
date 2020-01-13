@@ -1,10 +1,8 @@
-import { Gender } from './Gender';
-import { Starring } from './Starring';
 
 export class Title{
-    id: number;
+    pk: number;
     name: String;
     year: number;
-    starring: Starring;
-    gender: Gender;
+    starring: string;
+    gender: string;
 }

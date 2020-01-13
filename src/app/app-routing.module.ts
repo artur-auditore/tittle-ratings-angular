@@ -1,4 +1,4 @@
-import { AuthGuardService } from './guard/auth.guard.service';
+import { AuthGuard } from './service/auth.service';
 import { LoginComponent } from './login/login.component';
 import { RatingsComponent } from './ratings/ratings.component';
 import { ProfilesComponent } from './profiles/profiles.component';
@@ -16,22 +16,21 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  {path: 'starrings', component: StarringListComponent, canActivate: [AuthGuardService]},
-  {path: 'starrings-dashboard', component: StarringsDashboardComponent},
-  {path: 'starrings/:pk', component: StarringDetailComponent},
-  {path: 'titles', component: TitlesComponent},
-  {path: 'titles/:pk', component: TitleDetailComponent},
-  {path: 'genders', component: GendersComponent},
-  {path: 'profiles', component: ProfilesComponent},
-  {path: 'profiles/:pk', component: ProfileDetailComponent},
-  {path: 'ratings', component: RatingsComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'logout', component: LoginComponent}
+  {path: 'starrings', component: StarringListComponent},
+  {path: 'starrings-dashboard', component: StarringsDashboardComponent, canActivate: [AuthGuard]},
+  {path: 'starrings/:pk', component: StarringDetailComponent, canActivate: [AuthGuard]},
+  {path: 'titles', component: TitlesComponent, canActivate: [AuthGuard]},
+  {path: 'titles/:pk', component: TitleDetailComponent, canActivate: [AuthGuard]},
+  {path: 'genders', component: GendersComponent, canActivate: [AuthGuard]},
+  {path: 'profiles', component: ProfilesComponent, canActivate: [AuthGuard]},
+  {path: 'profiles/:pk', component: ProfileDetailComponent, canActivate: [AuthGuard]},
+  {path: 'ratings', component: RatingsComponent, canActivate: [AuthGuard]},
+  {path: 'login', component: LoginComponent}
 ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthGuardService]
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }

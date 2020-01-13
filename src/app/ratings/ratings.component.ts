@@ -23,7 +23,7 @@ export class RatingsComponent implements OnInit {
     private titleService: TitlesServiceService) { }
 
   ngOnInit() {
-    this.getRatings()
+    this.getRatings();
     this.getTitles();
   }
 

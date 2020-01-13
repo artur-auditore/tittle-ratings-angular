@@ -40,6 +40,10 @@ h4 {
     width: 25%;
 }
 
+div {
+    margin-right: 9px;
+}
+
 .module {
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
@@ -47,7 +51,7 @@ h4 {
     color: #eee;
     max-height: 120px;
     min-width: 120px;
-    background-color: #d4d000;
+    background-color: #49445a;
     border-radius: 2px;
 }
 

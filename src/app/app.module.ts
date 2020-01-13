@@ -1,11 +1,10 @@
-import { AuthGuardService } from './guard/auth.guard.service';
-import { AuthService } from './login/auth.service';
+import { AuthService, AuthInterceptor, AuthGuard} from './service/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { AppComponent } from './app.component';
 import { StarringService } from './service/starring.service'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { StarringListComponent } from './starring-list/starring-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -39,7 +38,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatAutocompleteModule
   ],
   exports: [MatAutocompleteModule],
-  providers: [StarringService, AuthService, AuthGuardService],
+  providers: [StarringService, AuthService, AuthGuard,
+  { provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

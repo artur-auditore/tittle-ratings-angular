@@ -1,14 +1,14 @@
 <h1> {{title}} </h1>
 
 <hr/>
-
-<nav>
-    <a routerLink="/starrings-dashboard">Starrings</a>
-    <a routerLink="/titles">Titles</a>
-    <a routerLink="/genders">Genders</a>
-    <a routerLink="/profiles">Profiles</a>
-    <a routerLink="/ratings">Ratings</a>
-    <a routerLink="/logout">Logout</a>
-</nav>
-
+<div>
+    <nav class="nav-bar">
+        <a routerLink="/starrings-dashboard" routerLinkActive="active">Starrings</a>
+        <a routerLink="/titles" routerLinkActive="active">Titles</a>
+        <a routerLink="/genders" routerLinkActive="active">Genders</a>
+        <a routerLink="/profiles" routerLinkActive="active">Profiles</a>
+        <a routerLink="/ratings" routerLinkActive="active">Ratings</a>
+        <a routerLink="" (click)="logout()">Logout </a>
+    </nav>
+</div>
 <router-outlet></router-outlet>

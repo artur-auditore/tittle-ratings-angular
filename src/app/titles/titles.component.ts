@@ -13,7 +13,7 @@ import { Gender } from '../model/Gender';
 })
 export class TitlesComponent implements OnInit {
 
-  starrings: Array<any>;
+  starrings: Array<Starring>;
   genders: Array<Gender>;
   selectedTitle: Title;
   selectedGender: Gender;
@@ -47,11 +47,31 @@ export class TitlesComponent implements OnInit {
     this.selectedTitle = title;
   }
 
-  newTitle(name: string, year: number, gender: Gender, starring: Starring){
+  findGender(gender: string): Gender{
+    for (let g of this.genders){
+      if (g.name == gender){
+        return g;
+      } 
+    } 
+  }
+
+  findStarring(starring: string): Starring{
+    for (let s of this.starrings){
+      if (s.name == starring){
+        return s;
+      }
+    }
+  }
+
+  newTitle(name: string, year: number, gender: string, starring: string){
     let title = new Title();
     title.name = name;
     title.year = year;
-    title.gender;
-  }
+    title.gender = JSON.stringify(this.findGender(gender))
+    title.starring = JSON.stringify(this.findStarring(starring))
+    this.titlesService.newTitle(title)
+    .subscribe(title =>
+      this.titles.push(title));
+    }
 
 }

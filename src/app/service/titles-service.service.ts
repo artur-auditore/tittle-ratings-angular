@@ -14,8 +14,9 @@ export class TitlesServiceService {
 
   constructor(private http: HttpClient) { }
 
-  headers = new HttpHeaders()
-   .append('Content-Type' , 'application/json');
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   listar(){
     return this.http.get<any[]>(this.titlesUrl);
@@ -29,7 +30,7 @@ export class TitlesServiceService {
   }
 
   newTitle(title: Title){
-    return this.http.post<Title>(this.titlesUrl, title, {headers: this.headers}).pipe(
+    return this.http.post<Title>(this.titlesUrl, title, this.httpOptions).pipe(
       catchError(this.handleError<Title>(`newStarring`))
     );
   }

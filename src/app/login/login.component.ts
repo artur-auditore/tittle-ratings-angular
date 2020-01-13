@@ -1,6 +1,6 @@
 import { User } from './../model/User';
 import { Router } from '@angular/router';
-import { AuthService } from './auth.service';
+import { AuthService } from '../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,28 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  private user = new User();
-  error: any;
-  data = localStorage
+  error: any
+  input;
 
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-    
+    this.input = {
+      username: '',
+      password: ''
+    };
   }
 
-  login(){
-    this.authService.login(this.user).subscribe(
-      ok => {
-        console.log(ok),
-        this.data.setItem('currentUserName', ok['username']);
-        this.data.setItem('currentUserToken', ok['token']);
-        this.router.navigate(['/starrings-dashboard'])
-      },
-      error => {
-        console.log(error);
-        document.getElementById('msg').innerHTML = "User not found.";
-      });
+  login() {
+    this.authService.login(this.input).subscribe(
+      success => this.router.navigate(['starrings-dashboard']),
+      error => this.error = error
+    );
+  }
+
+  logout(){
+    this.authService.logout();
+  }
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
+  }
+
+  homePage(){
+    this.router.navigate(['starrings-dashboard'])
   }
 
 }

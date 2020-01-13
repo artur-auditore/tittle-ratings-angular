@@ -1,9 +1,10 @@
 <h4>New Title</h4>
 
 <div>
-    <input placeholder="Name" #TitleName/>
+    <input type="text" placeholder="Name" #titleName/>
+    <input type="text" placeholder="Year" #titleYear/>
     <mat-form-field>
-        <input type="text" placeholder="Gender" aria-label="Gender" [matAutocomplete]="autoGender">
+        <input type="text" placeholder="Gender" [matAutocomplete]="autoGender">
         <mat-autocomplete #autoGender="matAutocomplete">
             <mat-option *ngFor="let gender of genders" [value]="gender.name">
                 {{gender.name}}
@@ -11,23 +12,19 @@
         </mat-autocomplete>
     </mat-form-field>
     <mat-form-field>
-        <input type="text" placeholder="Starring" aria-label="Number" [matAutocomplete]="autoStarring">
+        <input type="text" placeholder="Starring" type="text" [matAutocomplete]="autoStarring">
         <mat-autocomplete #autoStarring="matAutocomplete">
             <mat-option *ngFor="let starring of starrings" [value]="starring.name">
                 {{starring.name}}
             </mat-option>
         </mat-autocomplete>
     </mat-form-field>
-    <input placeholder="Year" #titleYear/>
-    <button (click)="newTitle(titleName.value, titleYear.value, autoGender.text, autoStarring.text)">
-      add
+    <button class="btn btn-dark" (click)="newTitle(titleName.value, titleYear.value, autoGender.value, autoStarring.value);">
+        Add Title
     </button>
 </div>
-
-
-
-<h3>Titles</h3>
 <div class="grid grid-pad">
+    <h3>Titles</h3>
     <a *ngFor="let title of titles" class="col-1-4" routerLink="/titles/{{titles.pk}}">
         <div class="module title">
             <a routerLink="/titles/{{title.pk}}">{{title.name}}</a>
