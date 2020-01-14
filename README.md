@@ -7,4 +7,4 @@ O projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) n
 ## Development server
 Antes de tudo, no terminal execute "npm install"; logo em seguida, rode "npm start" ou "ng serve" e no navegador acesse http://localhost:4200/. A aplicação irá recarregar automaticamente se você fizer mudanças.
 
-[Vídeo demonstrativo](https://youtu.be/fsO-yApYQ4s)
+### [Vídeo demonstrativo](https://youtu.be/fsO-yApYQ4s)
